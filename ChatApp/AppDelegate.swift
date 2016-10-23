@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        Parse.enableLocalDatastore()
+        
+        let parseConfiguration = ParseClientConfiguration(block: { (ParseMutableClientConfiguration) -> Void in
+            ParseMutableClientConfiguration.applicationId = "myChat"
+            ParseMutableClientConfiguration.clientKey = "ChatMasterKeys"
+            ParseMutableClientConfiguration.server = "http://192.168.0.17:1337/parse"
+        })
+        
+        Parse.initialize(with: parseConfiguration)
+        //PFUser.enableAutomaticUser()
+        
         return true
     }
 

@@ -17,6 +17,10 @@ class usersVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.hidesBackButton = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

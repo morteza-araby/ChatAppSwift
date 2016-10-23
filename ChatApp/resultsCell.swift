@@ -14,7 +14,6 @@ class resultsCell: UITableViewCell {
     @IBOutlet weak var profileNameLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,6 +23,7 @@ class resultsCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        profileImg.setRounded()
     }
 
 }

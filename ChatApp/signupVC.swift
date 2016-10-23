@@ -25,10 +25,11 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         usernameTxt.delegate = self
         passwordTxt.delegate = self
         profileNameTxt.delegate = self
+       
         // Do any additional setup after loading the view.
-//        profileimg.center = CGPoint(x: view.frame.size.width/2, y: 140)
-//        profileimg.layer.cornerRadius = profileimg.frame.size.width/2
-//        profileimg.clipsToBounds = true
+        //profileimg.center = CGPoint(x: view.frame.size.width/2, y: 140)
+        //profileimg.layer.cornerRadius = profileimg.frame.size.width/2
+        //profileimg.clipsToBounds = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,12 +44,16 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         image.sourceType = .photoLibrary
         image.allowsEditing = true
         self.present(image, animated: true, completion: nil)
-        //self.presentedViewController(image, animated: true, completion: nil)
+        //self.presentedViewController(image, animated: true, completion: nil)   
+            
+            profileimg.setRounded()
+            
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         profileimg.image = (info[UIImagePickerControllerOriginalImage] as! UIImage)
+    
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -138,11 +143,3 @@ class signupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
 
 }
 
-extension UIImageView {
-    
-    func setRounded() {
-        let radius = self.frame.width / 2
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
-    }
-}

@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ParseMutableClientConfiguration.applicationId = "myChat"
             ParseMutableClientConfiguration.clientKey = "ChatMasterKeys"
             ParseMutableClientConfiguration.server = "http://192.168.0.17:1337/parse"
+            //ParseMutableClientConfiguration.server = "https://morteza.hometest.me:8001"
         })
         
         Parse.initialize(with: parseConfiguration)

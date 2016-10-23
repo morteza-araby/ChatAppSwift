@@ -22,6 +22,10 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.hidesBackButton = true
+    }
 
     @IBAction func loginBtn_click(_ sender: AnyObject) {
         
@@ -55,5 +59,15 @@ class LoginVC: UIViewController {
     }
 
 
+}
+
+
+extension UIImageView {
+    
+    func setRounded() {
+        let radius = self.frame.width / 2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+    }
 }
 
